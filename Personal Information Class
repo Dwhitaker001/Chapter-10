@@ -1,0 +1,52 @@
+# Design a class that holds the following personal data: name, address, age, and phone number. Write
+# appropriate accessor and mutator methods (get and set). Write a program that creates three instances of the
+# class. One instance should hold your information and the other two should hold your friends or family
+# members' information.  Just add information, don't get it from the user.  Print the data from each object, make
+# sure to format the output for clarity and ease of reading.
+
+
+class Information:
+    def __init__(self, name, address, age, phone):
+        self.__name = name
+        self.__address = address
+        self.__age = age
+        self.__phone = phone
+
+    def set_name(self, name):
+        self.__name = name
+
+    def set_address(self, address):
+        self.__address = address
+
+    def set_age(self, age):
+        self.__age = age
+
+    def set_phone(self, phone):
+        self.__phone = phone
+
+    def get_name(self):
+        return self.__name
+
+    def get_address(self):
+        return self.__address
+
+    def get_age(self):
+        return self.__age
+
+    def get_phone(self):
+        return self.__phone
+
+    def __str__(self):
+        summary = self.__name
+        summary += self.__address
+        summary += self.__age
+        summary += self.__phone
+        return summary
+
+
+name1 = Information("Donald\n", "1024 N Chicago Rd\n", "32\n", "224-2244\n")
+print(name1)
+name2 = Information("Bobby\n", "123 Lake Villa Rd\n", "31\n", "336-6633\n")
+print(name2)
+name3 = Information("Logan\n", "666 St. Mary Rd\n", "30\n", "555-5556\n")
+print(name3)
