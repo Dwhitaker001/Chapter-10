@@ -1,0 +1,89 @@
+# In this programming exercise, you will create a simple trivia game for two players. The program will work like
+# this:
+# Starting with player 1, each player gets a turn at answering 5 trivia questions. (There should be a total of
+# 10 questions.) When a question is displayed, 4 possible answers are also displayed. Only one of the
+# answers is correct, and if the player selects the correct answer, he or she earns a point.
+# After answers have been selected for all the questions, the program displays the number of points earned
+# by each player and declares the player with the highest number of points the winner.
+
+
+class Question:
+
+    def __init__(self, question, a1, a2, a3, a4, answer):
+        self.__question = question
+        self.__a1 = a1
+        self.__a2 = a2
+        self.__a3 = a3
+        self.__a4 = a4
+        self.__answer = answer
+
+    def set_question(self, question):
+        self.__question = question
+
+    def set_a1(self, a1):
+        self.__a1 = a1
+
+    def set_a2(self, a2):
+        self.__a2 = a2
+
+    def set_a3(self, a3):
+        self.__a3 = a3
+
+    def set_a4(self, a4):
+        self.__a4 = a4
+
+    def set_answer(self, answer):
+        self.__answer = answer
+
+    def get_question(self):
+        return self.__question
+
+    def get_a1(self):
+        return self.__a1
+
+    def get_a2(self):
+        return self.__a2
+
+    def get_a3(self):
+        return self.__a3
+
+    def get_a4(self):
+        return self.__a4
+
+    def get_answer(self):
+        return self.__answer
+
+
+def main():
+    q1 = Question("What ten divided by 2? ", "A. 3", "B. 4", "C. 5", "D. 23523", "C")
+    q2 = Question("Who won the World Series in 2016? ", "A. Chicago Cubs", "B. Chicago White Sox", "C. Boston Red Sox", "D. Cleveland Browns", "A")
+    q3 = Question("What day fall on Halloween? ", "A. October 29", "B. October 30", "C. October 31", "D. October 32", "C")
+    q4 = Question("How many teams are in National Football League? ", "A. 30", "B. 32", "C. 36", "D. 3000", "B")
+    q5 = Question("March 16, 2018 fall on what day? ", "A. Friday", "B. Saturday", "C. Sunday", "D. Funday", "A")
+    q6 = Question("What two times ten? ", "A. 7", "B. 14", "C. 20", "D. 4251", "C")
+    q7 = Question("Who won the 2018 Super Bowl? ", "A. Philadelphia Eagles", "B. Jacksonville Jaguars", "C. New England Patriots", "D. Chicago Bulls", "A")
+    q8 = Question("Who was the 44th President of the United States? ", "A. George W. Bush", "B. Barack Obama", "C. Donald Trump", "D. Kayne West", "B")
+    q9 = Question("Leap Day falls on what day? ", "A. February 29", "B. March 32", "C. June 31", "D. December 45", "A")
+    q10 = Question("What is the capital of Tennessee? ", "A. Atlanta", "B. Nashville", "C. Springfield", "D. McHenry", "B")
+
+    player1 = 0
+    player2 = 0
+
+    set_1 = [q1, q2, q3, q4, q5]
+    set_2 = [q6, q7, q8, q9, q10]
+
+    print("Player 1: ")
+    for query in set_1:
+        print("\n")
+        print(query.get_question())
+        print(query.get_a1())
+        print(query.get_a2())
+        print(query.get_a3())
+        print(query.get_a4())
+        guess = input("Please enter the letter of the correct answer: ")
+        if guess.upper() == query.get_answer():
+            print("Correct!")
+            player1 += 1
+
+
+main()
