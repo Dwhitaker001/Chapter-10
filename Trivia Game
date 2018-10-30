@@ -84,6 +84,23 @@ def main():
         if guess.upper() == query.get_answer():
             print("Correct!")
             player1 += 1
+        else:
+            print("Incorrect!")
+
+    print("Player 2: ")
+    for query in set_2:
+        print("\n")
+        print(query.get_question())
+        print(query.get_a1())
+        print(query.get_a2())
+        print(query.get_a3())
+        print(query.get_a4())
+        guess = input("Please enter the letter of the correct answer: ")
+        if guess.upper() == query.get_answer():
+            print("Correct!")
+            player2 += 1
+        else:
+            print("Incorrect!")
 
 
 main()
